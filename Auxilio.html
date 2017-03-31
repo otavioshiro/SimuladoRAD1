@@ -1,0 +1,61 @@
+
+<html>
+
+  <head>
+
+      
+        <h1>Simulado P1</h1>
+            Gerenciador de pedidos</br>
+            <br>
+
+     <script type="text/javascript">
+       
+      function processar(idTabela){
+                
+        var newRow = document.createElement('tr');
+        var row2 = document.getElementById('row2');
+        var aqui = document.getElementById('idTabela').insertBefore(newRow,row2)
+      
+      } 
+       
+   </script>  
+
+  </head>
+
+   
+  <body>
+
+   <form name="formulario" method="post" onsubmit="return processar('myTable')">  
+	Item:  <input type="text" name="item">
+	Valor: <input type="text" name="valor">
+    
+	<input type="submit" value="Confirmar"> 
+	
+</form>
+    <table border='1'>
+        <tbody id="myTable"></tbody>
+    </table>
+
+<script>
+    var d = document;
+    
+     function somarValor(){
+            var elValor = document.getElementById("idValor").value;
+            var resultado = resultado + elValor;
+    }
+
+    function processar(idTabela){
+
+        var newRow = d.createElement('tr');
+	    newRow.insertCell(0).innerHTML = d.getElementsByName('item')[0].value;
+	    newRow.insertCell(1).innerHTML = d.getElementsByName('valor')[0].value;
+	    d.getElementById(idTabela).appendChild(newRow);
+	    return false;
+
+    }
+
+</script>
+</body>
+
+
+</html>
