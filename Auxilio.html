@@ -2,7 +2,6 @@
 <html>
 
   <head>
-
       
         <h1>Simulado P1</h1>
             Gerenciador de pedidos</br>
@@ -22,21 +21,28 @@
 
   </head>
 
-   
   <body>
 
    <form name="formulario" method="post" onsubmit="return processar('myTable')">  
 	Item:  <input type="text" name="item">
 	Valor: <input type="text" name="valor">
     
-	<input type="submit" value="Confirmar"> 
+	<input type="submit" value="Confirmar">
 	
 </form>
     <table border='1'>
         <tbody id="myTable"></tbody>
     </table>
+    
+    <br>
+    <button onclick="deleteRow()">Excluir</button>
 
 <script>
+
+    function deleteRow() {
+            document.getElementById("myTable").deleteRow(0);
+    }
+
     var d = document;
     
      function somarValor(){
@@ -53,9 +59,8 @@
 	    return false;
 
     }
-
+    
 </script>
 </body>
-
 
 </html>

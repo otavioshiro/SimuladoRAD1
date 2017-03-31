@@ -10,32 +10,21 @@
 
     <script>
 
-        function processar(idTabela){
-                
-        var newRow = document.createElement('tr');
-        var row2 = document.getElementById('row2');
-        var aqui = document.getElementById('idTabela').insertBefore(newRow,row2)
-      
-      } 
+        function inserir(){
+            var item = document.getElementById("idItem").value;
+            var valor = document.getElementById("idValor").value;
 
-    </script>
+            document.getElementById("corpo_tabela").innerHTML += "<tr><td>"+item+"</td><td>"+valor+"</td></tr>";
+        }
 
-    <script>
+        function excluir(){
+            document.getElementById("tabelaItens").deleteRow();
+        }
 
         function somarValor(){
             var elValor = document.getElementById("idValor").value;
             var resultado = resultado + elValor;
         } 
-
-        function processar(idTabela){
-
-            var newRow = d.createElement('tr');
-                newRow.insertCell(0).innerHTML = d.getElementsByName('idItem')[0].value;
-                newRow.insertCell(1).innerHTML = d.getElementsByName('idValor')[0].value;
-                d.getElementById(idTabela).appendChild(newRow);
-            return false;
-
-    }
 
     </script>
 
@@ -47,16 +36,19 @@
             <input type="text" value="" id="idItem">
             <label id="item">Valor</label>
             <input type="text" value="" id="idValor">
-            <input type="button" onclick="somarValor()" value="Resultado: ">
+            <input type="button" onclick="inserir()" value="Resultado: ">
 
         </form>
 
         <table id="tableItens" border="1">
-
-            <tr>
-                <td>Item</td>
-                <td>Valor</td>
-
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="corpo_tabela">
+            </tbody>
         </table>
 
         </tr>
